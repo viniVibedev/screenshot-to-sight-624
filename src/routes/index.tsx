@@ -599,7 +599,11 @@ function Index() {
         <FinalCta />
       </main>
       <Footer />
-      <MobileBar />
+      <MobileBar /><div className="dogson-scissor-track" aria-hidden="true">
+  <div className="dogson-scissor-line" />
+  <div className="dogson-scissor-progress" />
+  <span className="dogson-scissor-icon">✂</span>
+</div>
 
       <div className="dogson-scissor-track" aria-hidden="true">
         <div className="dogson-scissor-line" />
