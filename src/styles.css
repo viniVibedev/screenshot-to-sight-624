@@ -88,3 +88,82 @@
   color: var(--color-muted-foreground);
 }
 
+/* Animacoes suaves da Dogson */
+@keyframes dogsonFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dogsonHeroImage {
+  from {
+    opacity: 0.7;
+    transform: scale(1.045);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #topo > div > div:first-child > .eyebrow,
+  #topo h1,
+  #topo h1 + p,
+  #topo h1 + p + div,
+  #topo h1 + p + div + div {
+    animation: dogsonFadeUp 0.65s ease-out both;
+  }
+
+  #topo > div > div:first-child > .eyebrow {
+    animation-delay: 0.04s;
+  }
+
+  #topo h1 {
+    animation-delay: 0.12s;
+  }
+
+  #topo h1 + p {
+    animation-delay: 0.2s;
+  }
+
+  #topo h1 + p + div {
+    animation-delay: 0.28s;
+  }
+
+  #topo h1 + p + div + div {
+    animation-delay: 0.36s;
+  }
+
+  #topo > div > div:nth-child(2) img {
+    animation: dogsonHeroImage 0.9s ease-out both;
+  }
+
+  @media (hover: hover) {
+    a.inline-flex.min-h-12 {
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+    }
+
+    a.inline-flex.min-h-12:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgb(0 0 0 / 18%);
+      filter: brightness(1.04);
+    }
+
+    #sobre ul.grid > li {
+      transition: transform 0.25s ease;
+    }
+
+    #sobre ul.grid > li:hover {
+      transform: translateY(-3px);
+    }
+  }
+}
