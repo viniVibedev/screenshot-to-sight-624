@@ -15,7 +15,7 @@ export const business = {
 
 export const links = {
   booking: null as string | null, // PENDENTE: link oficial do Booksy
-  whatsappNumber: null as string | null, // PENDENTE: ex. "551147864641"
+  whatsappNumber: "551147864641",
   instagram: null as string | null, // PENDENTE: URL do perfil oficial
   googleProfile: null as string | null, // PENDENTE: perfil oficial no Google
   // Navegação por busca do endereço (sem coordenadas inventadas)
