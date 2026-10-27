@@ -598,17 +598,44 @@ function Index() {
         <Location />
         <FinalCta />
       </main>
-      <Footer />
-      <MobileBar /><div className="dogson-scissor-track" aria-hidden="true">
-  <div className="dogson-scissor-line" />
-  <div className="dogson-scissor-progress" />
-  <span className="dogson-scissor-icon">✂</span>
-</div>
+     <Footer />
+      <MobileBar />
 
       <div className="dogson-scissor-track" aria-hidden="true">
         <div className="dogson-scissor-line" />
         <div className="dogson-scissor-progress" />
-        <span className="dogson-scissor-icon">✂</span>
+
+        <span className="dogson-scissor-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#fff2b8" />
+                <stop offset="35%" stopColor="#e8c66f" />
+                <stop offset="65%" stopColor="#a87923" />
+                <stop offset="100%" stopColor="#f9df91" />
+              </linearGradient>
+            </defs>
+
+            <g
+              fill="none"
+              stroke="url(#gold)"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="12" cy="16" r="8" />
+              <circle cx="12" cy="48" r="8" />
+              <path d="M18 21 L56 7 L29 32 L18 43" />
+              <path d="M18 43 L56 57 L29 32 L18 21" />
+              <circle cx="29" cy="32" r="3" fill="#e8c66f" />
+            </g>
+
+            <g stroke="#fff2b8" strokeWidth="1" opacity="0.8">
+              <path d="M35 24 L51 12" />
+              <path d="M35 40 L51 52" />
+            </g>
+          </svg>
+        </span>
       </div>
     </>
   );
