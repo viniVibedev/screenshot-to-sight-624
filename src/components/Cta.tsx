@@ -10,7 +10,7 @@ const styles: Record<Variant, string> = {
 };
 
 const base =
-  "inline-flex min-h-12 items-center justify-center gap-3 px-6 text-xs font-semibold uppercase tracking-[0.16em] transition-colors";
+  "inline-flex min-h-12 whitespace-nowrap items-center justify-center gap-3 px-6 text-xs font-semibold uppercase tracking-[0.16em] transition-colors";
 
 /** Link de ação. Se `href` for null, renderiza estado "pendente" (sem destino falso). */
 export function Cta({

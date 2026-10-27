@@ -101,7 +101,7 @@ function Hero() {
           <p className="mt-8 max-w-sm text-base leading-relaxed text-muted-foreground">
             Corte, barba e acabamento nos detalhes. Encontre seu próximo horário na Dogson Barbearia, em Taboão da Serra.
           </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
             <Cta href={links.booking}>Agendar horário</Cta>
             <Cta href="#servicos" variant="outline" external={false}>Conhecer serviços</Cta>
           </div>
@@ -123,7 +123,7 @@ function Hero() {
 function Strip() {
   return (
     <div className="border-y bg-ink">
-      <p className="display mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-5 py-6 text-[clamp(1.6rem,5vw,3.5rem)] text-muted-foreground md:px-8">
+      <p className="display mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-4 gap-y-2 px-5 py-6 text-[clamp(1.25rem,5vw,3.5rem)] text-muted-foreground md:px-8">
         <span className="text-foreground">Corte</span>
         <span aria-hidden className="text-primary">/</span>
         <span>Barba</span>
