@@ -32,19 +32,19 @@ export const whatsappUrl = links.whatsappNumber
   : null;
 
 // Preços PROVISÓRIOS — confirmar antes de publicar.
-export type Service = { name: string; price: number; combo?: boolean; highlight?: boolean };
+export type Service = { name: string; price: number; combo?: boolean; highlight?: boolean; desc?: string };
 export const services: Service[] = [
-  { name: "Degradê", price: 45 },
+  { name: "Degradê", price: 45, desc: "Transições bem trabalhadas para um visual marcante." },
   { name: "Degradê “tchabas”", price: 40 },
-  { name: "Corte social", price: 45 },
-  { name: "Corte infantil", price: 45 },
+  { name: "Corte social", price: 45, desc: "Um clássico que combina com diferentes estilos." },
+  { name: "Corte infantil", price: 45, desc: "Estilo e praticidade para os pequenos." },
   { name: "Raspar careca", price: 35 },
-  { name: "Barba simples", price: 30 },
+  { name: "Barba simples", price: 30, desc: "Atenção aos detalhes para completar seu visual." },
   { name: "Degradê + sobrancelha", price: 50, combo: true },
-  { name: "Corte e barba", price: 70, combo: true, highlight: true },
+  { name: "Corte e barba", price: 70, desc: "Renove o visual de uma só vez.", combo: true, highlight: true },
   { name: "Corte e barba com toalha", price: 80, combo: true },
   { name: "Corte, barba e progressiva", price: 180, combo: true },
-  { name: "Pezinho / acabamento", price: 20 },
+  { name: "Pezinho / acabamento", price: 20, desc: "Os detalhes que fazem a diferença." },
   { name: "Depilação nasal / orelhas", price: 20 },
   { name: "Secagem com água de progressiva", price: 25 },
 ];
