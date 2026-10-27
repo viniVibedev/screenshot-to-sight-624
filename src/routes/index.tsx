@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Cta } from "@/components/Cta";
 import { business, links, services, hours, team, rating, reviews, whatsappUrl } from "@/data/dogson";
-import hero from "@/assets/hero.jpg";
+import hero from "@/assets/Sem título.jpg";
 import ambiente from "@/assets/ambiente.jpg";
 import ferramentas from "@/assets/ferramentas.jpg";
 import barba from "@/assets/barba.jpg";
