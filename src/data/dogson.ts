@@ -14,7 +14,7 @@ export const business = {
 };
 
 export const links = {
-  booking: null as string | null, // PENDENTE: link oficial do Booksy
+  booking: "https://booksy.com/pt-br/74225_dogson-barbearia_barbearias_944115_taboao-da-serra",
   whatsappNumber: "5511986749753",
   instagram: null as string | null, // PENDENTE: URL do perfil oficial
   googleProfile: null as string | null, // PENDENTE: perfil oficial no Google
