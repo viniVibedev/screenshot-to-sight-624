@@ -520,8 +520,10 @@ function MobileBar() {
   );
 }
 
+
 function Index() {
-   useEffect(() => {
+  // Animacoes das secoes ao rolar a pagina
+  useEffect(() => {
     const sections = document.querySelectorAll("main section");
 
     if (!("IntersectionObserver" in window)) return;
@@ -546,6 +548,43 @@ function Index() {
     return () => observer.disconnect();
   }, []);
 
+  // Tesoura que acompanha a rolagem
+  useEffect(() => {
+    const progressLine = document.querySelector<HTMLElement>(
+      ".dogson-scissor-progress"
+    );
+    const scissors = document.querySelector<HTMLElement>(
+      ".dogson-scissor-icon"
+    );
+
+    if (!progressLine || !scissors) return;
+
+    const updateProgress = () => {
+      const maxScroll =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+      const progress =
+        maxScroll > 0
+          ? Math.min(1, Math.max(0, window.scrollY / maxScroll))
+          : 0;
+
+      progressLine.style.height = `${progress * 100}%`;
+      scissors.style.top = `${progress * 100}%`;
+    };
+
+    updateProgress();
+
+    window.addEventListener("scroll", updateProgress, {
+      passive: true,
+    });
+    window.addEventListener("resize", updateProgress);
+
+    return () => {
+      window.removeEventListener("scroll", updateProgress);
+      window.removeEventListener("resize", updateProgress);
+    };
+  }, []);
+
   return (
     <>
       <Header />
@@ -561,6 +600,12 @@ function Index() {
       </main>
       <Footer />
       <MobileBar />
+
+      <div className="dogson-scissor-track" aria-hidden="true">
+        <div className="dogson-scissor-line" />
+        <div className="dogson-scissor-progress" />
+        <span className="dogson-scissor-icon">✂</span>
+      </div>
     </>
   );
 }
