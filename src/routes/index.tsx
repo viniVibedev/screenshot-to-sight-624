@@ -94,7 +94,7 @@ function Hero() {
           <p className="eyebrow mb-8 flex items-center gap-3">
             <span className="h-px w-8 bg-primary" /> Dogson Barbearia • Taboão da Serra
           </p>
-          <h1 className="display text-[clamp(3.2rem,11vw,7rem)] md:-mr-40 md:relative md:z-10">
+          <h1 className="display text-[clamp(3rem,10vw,6rem)] md:relative md:z-10">
             Seu estilo fala <span className="text-primary">antes de você.</span>
           </h1>
           <p className="mt-8 max-w-sm text-base leading-relaxed text-muted-foreground">
@@ -158,9 +158,9 @@ function Services() {
                     <span className="text-lg font-semibold md:text-2xl">{s.name}</span>
                     {s.desc && <span className="mt-1 text-sm font-normal opacity-70">{s.desc}</span>}
                   </span>
-                  {s.highlight && <span className="eyebrow !text-primary">Mais pedido</span>}
+                  {s.highlight && <span className="eyebrow hidden !text-primary sm:inline">Mais pedido</span>}
                   <span aria-hidden className="flex-1 border-b border-dotted border-current opacity-30" />
-                  <span className="display text-2xl md:text-3xl">{brl(s.price)}</span>
+                  <span className="display shrink-0 whitespace-nowrap text-2xl md:text-3xl">{brl(s.price)}</span>
                 </li>
               ))}
             </ul>
