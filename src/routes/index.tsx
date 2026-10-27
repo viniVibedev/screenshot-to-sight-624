@@ -5,7 +5,7 @@ import { business, links, services, hours, team, rating, reviews, whatsappUrl } 
 import hero from "@/assets/Sem título.jpg";
 import ambiente from "@/assets/ambiente.jpg";
 import ferramentas from "@/assets/ferramentas.jpg";
-import barba from "@/assets/barba.jpg";
+import barba from "@/assets/barbitav2.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
