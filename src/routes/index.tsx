@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Cta } from "@/components/Cta";
 import { business, links, services, hours, team, rating, reviews, whatsappUrl } from "@/data/dogson";
 import hero from "@/assets/Sem título.jpg";
@@ -521,6 +521,31 @@ function MobileBar() {
 }
 
 function Index() {
+   useEffect(() => {
+    const sections = document.querySelectorAll("main section");
+
+    if (!("IntersectionObserver" in window)) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    sections.forEach((section) => {
+      section.classList.add("reveal-on-scroll");
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <Header />
