@@ -186,3 +186,65 @@
     transform: none;
   }
 }
+/* Tesoura que acompanha o progresso da pagina */
+.dogson-scissor-track {
+  position: fixed;
+  top: 15vh;
+  right: 14px;
+  width: 24px;
+  height: 62vh;
+  z-index: 20;
+  pointer-events: none;
+  opacity: 0.82;
+}
+
+.dogson-scissor-line,
+.dogson-scissor-progress {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  border-radius: 99px;
+}
+
+.dogson-scissor-line {
+  height: 100%;
+  background: rgba(201, 164, 90, 0.3);
+}
+
+.dogson-scissor-progress {
+  height: 0;
+  background: #c9a45a;
+}
+
+.dogson-scissor-icon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  color: #c9a45a;
+  font-size: 24px;
+  line-height: 1;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  text-shadow: 0 0 10px rgba(201, 164, 90, 0.3);
+}
+
+@media (max-width: 640px) {
+  .dogson-scissor-track {
+    top: 16vh;
+    right: 5px;
+    width: 18px;
+    height: 52vh;
+    opacity: 0.7;
+  }
+
+  .dogson-scissor-icon {
+    font-size: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dogson-scissor-icon {
+    transition: none;
+  }
+}
