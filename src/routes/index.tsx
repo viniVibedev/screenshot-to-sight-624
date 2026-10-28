@@ -7,9 +7,7 @@ import { useEffect, useState } from "react";
 import { Cta } from "@/components/Cta";
 import { business, links, services, hours, team, rating, reviews, whatsappUrl } from "@/data/dogson";
 import hero from "@/assets/Sem título.jpg";
-import ambiente from "@/assets/caracortando.jpg";
 import ferramentas from "@/assets/ferramentas.jpg";
-import barba from "@/assets/barbitav2.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
