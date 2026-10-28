@@ -1,3 +1,7 @@
+import corte2 from "@/assets/2.jpg";
+import corte1 from "@/assets/1.jpg";
+import semTitulo from "@/assets/Sem título.jpg";
+import barba from "@/assets/barbitav2.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Cta } from "@/components/Cta";
