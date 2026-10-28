@@ -1,5 +1,3 @@
-import corte1 from "@/assets/1.jpg";
-import corte2 from "@/assets/2.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Cta } from "@/components/Cta";
@@ -317,137 +315,51 @@ function About() {
 
 
 function Gallery() {
-  const photos = [
-    { src: corte1, title: "Corte em destaque" },
-    { src: corte2, title: "Estilo e atitude" },
-    { src: hero, title: "Degradê" },
-    { src: barba, title: "Barba e acabamento" },
-  ];
-
-  const [current, setCurrent] = useState(0);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-
-  const previous = () => {
-    setCurrent((index) => (index - 1 + photos.length) % photos.length);
-  };
-
-  const next = () => {
-    setCurrent((index) => (index + 1) % photos.length);
-  };
-
   return (
-    <section
-      id="galeria"
-      className="scroll-mt-20 border-y border-foreground/10 bg-ink"
-    >
+    <section id="galeria" className="scroll-mt-20 border-y border-foreground/10 bg-ink">
       <div className="mx-auto max-w-7xl px-5 py-16 sm:py-20 md:px-8 md:py-28">
         <div className="mb-10 flex flex-col gap-5 md:mb-12 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
             <p className="eyebrow mb-5">04 / Galeria</p>
-            <h2 className="display text-[clamp(2.8rem,7vw,5.6rem)] leading-[0.9]">
-              Inspiração para o próximo corte.
-            </h2>
-            <p className="mt-5 max-w-md leading-relaxed text-muted-foreground">
-              Encontre sua próxima referência e escolha o estilo que combina com você.
-            </p>
+            <h2 className="display text-[clamp(2.8rem,7vw,5.6rem)] leading-[0.9]">Inspiração para o próximo corte.</h2>
+            <p className="mt-5 max-w-md leading-relaxed text-muted-foreground">Salve uma referência, traga sua ideia e converse com o barbeiro sobre o visual que deseja.</p>
           </div>
-
           <div className="max-w-xs border-l-2 border-primary pl-4">
-            <p className="eyebrow !text-primary">Galeria de estilos</p>
-            <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-              Deslize para os lados e explore os cortes.
-            </p>
+            <p className="eyebrow !text-primary">Referências de estilo</p>
+            <p className="mt-2 text-xs leading-relaxed text-muted-foreground">Imagens ilustrativas. Elas não representam trabalhos realizados pela Dogson.</p>
           </div>
         </div>
 
-        <div className="relative mx-auto max-w-4xl">
-          <div
-            className="group relative overflow-hidden rounded-sm border border-foreground/10 bg-black"
-            onTouchStart={(event) =>
-              setTouchStart(event.touches[0].clientX)
-            }
-            onTouchEnd={(event) => {
-              if (touchStart === null) return;
-
-              const distance = event.changedTouches[0].clientX - touchStart;
-
-              if (distance < -45) next();
-              if (distance > 45) previous();
-
-              setTouchStart(null);
-            }}
-          >
-            <img
-              key={current}
-              src={photos[current].src}
-              alt={photos[current].title}
-              loading="lazy"
-              className="h-[420px] w-full select-none object-cover sm:h-[540px] md:h-[620px]"
-              draggable={false}
-            />
-
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/10" />
-
-            <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4 sm:bottom-8 sm:left-8 sm:right-8">
-              <div>
-                <p className="eyebrow mb-2 !text-primary">
-                  DOGSON / ESTILO
-                </p>
-                <h3 className="display text-3xl text-white sm:text-5xl">
-                  {photos[current].title}
-                </h3>
-              </div>
-
-              <span className="eyebrow whitespace-nowrap text-white/80">
-                {String(current + 1).padStart(2, "0")} / {String(photos.length).padStart(2, "0")}
-              </span>
-            </div>
-
-            <button
-              type="button"
-              onClick={previous}
-              aria-label="Foto anterior"
-              className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/50 text-2xl text-white transition hover:border-primary hover:bg-primary hover:text-black sm:left-5 sm:h-12 sm:w-12"
-            >
-              ‹
-            </button>
-
-            <button
-              type="button"
-              onClick={next}
-              aria-label="Próxima foto"
-              className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/50 text-2xl text-white transition hover:border-primary hover:bg-primary hover:text-black sm:right-5 sm:h-12 sm:w-12"
-            >
-              ›
-            </button>
-          </div>
-
-          <div className="mt-6 flex items-center justify-center gap-3">
-            {photos.map((photo, index) => (
-              <button
-                key={photo.title}
-                type="button"
-                onClick={() => setCurrent(index)}
-                aria-label={`Ver foto ${index + 1}`}
-                aria-current={current === index ? "true" : undefined}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
-                  current === index
-                    ? "w-9 bg-primary"
-                    : "w-2.5 bg-foreground/25 hover:bg-foreground/60"
-                }`}
-              />
-            ))}
-          </div>
-
-          <p className="mt-4 text-center text-xs text-muted-foreground">
-            Use as setas ou arraste para explorar as fotos.
-          </p>
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-12 md:gap-4">
+          <figure className="group relative col-span-2 overflow-hidden md:col-span-8 md:row-span-2">
+            <img src={hero} loading="lazy" width={1600} height={1104} alt="Degradê sendo finalizado com máquina; imagem de referência" className="aspect-[16/10] h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035] md:aspect-auto" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
+            <figcaption className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3 sm:bottom-6 sm:left-6 sm:right-6">
+              <span className="display text-2xl text-white sm:text-4xl">Degradê</span>
+              <span className="eyebrow text-white/80">01 / 03</span>
+            </figcaption>
+          </figure>
+          <figure className="group relative overflow-hidden md:col-span-4">
+            <img src={barba} loading="lazy" width={1024} height={1280} alt="Barba curta com contorno marcado; imagem de referência" className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
+            <figcaption className="absolute bottom-3 left-3 right-3 flex items-end justify-between gap-2 sm:bottom-5 sm:left-5 sm:right-5">
+              <span className="display text-xl text-white sm:text-3xl">Barba</span>
+              <span className="eyebrow text-white/80">02 / 03</span>
+            </figcaption>
+          </figure>
+          <figure className="group relative overflow-hidden md:col-span-4">
+            <img src={ferramentas} loading="lazy" width={1280} height={1024} alt="Ferramentas de barbearia em bancada; imagem de referência" className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04] md:aspect-[5/4]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
+            <figcaption className="absolute bottom-3 left-3 right-3 flex items-end justify-between gap-2 sm:bottom-5 sm:left-5 sm:right-5">
+              <span className="display text-xl text-white sm:text-3xl">Precisão</span>
+              <span className="eyebrow text-white/80">03 / 03</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
   );
 }
-
 function Reviews() {
   return (
     <section className="mx-auto max-w-7xl px-5 py-16 sm:py-20 md:px-8 md:py-28">
